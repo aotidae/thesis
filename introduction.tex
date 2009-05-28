@@ -1,0 +1,246 @@
+\chapter{Introduction}
+
+%#####################################################################
+\section{Historical overview}
+
+% As will be shown farther Quantum key distribution (QKD) allows two
+% parties to communicate in absolute security based on the fundamental
+% laws of physics.
+
+% Stephen Wiesner being the student of the Colombian university, in 1970
+% has submitted article under the coding theory to magazine IEEE
+% Information Theory, but it has not been published, as the assumptions
+% stated in it seemed fantastic, instead of scientific. In [[1]]
+% possibility of use of quantum states for protection of monetary
+% banknotes has been described. Wiesner has suggested to integrate in
+% each banknote 20 so-called light traps, and to place in each of them
+% one photon polarized in strictly certain condition. Each banknote was
+% marked by special serial number which concluded the information on
+% position of the polarizing photon filter. As a result of it if
+% different from sated filter was used the combination of the polarized
+% photons was erased. But at that point in time technological
+% development did not allow even to argue on such possibilities. However
+% in 1983 his work ? Conjugate coding ? has been published in SIGACT
+% News and was highly appreciated in scientific circles.
+
+% In a consequence on the basis of principles Wiesner?s work, scientists
+% Charles Bennett from IBM and Gilles Brassard from the Montreal
+% University have developed a principles of message coding and
+% transfer. They had been made a presentation ?Quantum cryptography:
+% public key distribution and coin tossing ? at conference IEEE
+% International Conference on Computers, Systems, and Signal
+% Processing. Protocol described in [[2]] is recognized subsequently by
+% the first and base protocol of quantum cryptography and has been named
+% in honour of its founders BB84.
+
+% At this time Artur Ekert worked over the protocol of the quantum
+% cryptography, based on the quantum states entanglement
+% [[3]]. Publication of results of this work has taken place in
+% 1991. This protocol based on principles of Einstein-Podolsky-Rosenberg
+% paradox.
+
+% Throughout twenty five years, the quantum cryptography has passed a
+% way from theoretical researches and the proof of the basic theories to
+% the commercial systems using an optical fibre for transfer on distance
+% of tens of kilometers.
+
+% In the first experimental demonstration of quantum key distribution in
+% 1989 [[4]], transfer was carried out through open space on distance of
+% thirty centimeters. Further these experiments have been done with use
+% of an optical fiber as media of distribution. After first
+% experiments. in Geneva, with use of an optical fiber with length of
+% 1,1 km [[5]], in 1995 distance of transfer have been increased to 23
+% km with optical fiber laid under water [[6]]. Approximately at the
+% same time, Townsend from British Telecom had been showed transfer on
+% 30 km [[7]]. Later he has increased range to 50 km [[8]]. In 2001,
+% Hisket in the United Kingdom had been made a demonstration of transfer
+% on distance of 80 km [[9]]. RECORD[MAU2]
+
+% Firs commercial QKD system was presented at CeBIT-2002 by GAP-Optique
+% company. Scientists managed to create compact enough and reliable
+% device. The system settled down in two 19-inch racks and could work
+% without any adjustment right after connections to the personal
+% computer. Bidirectional land and air fiber-optical connection has been
+% established with its help between the cities of Geneva and Luzanna the
+% distance between which is 67 km [[10]].
+
+% The next years such commercial monsters as Toshiba, NEC, IBM, Hewlett
+% Packard, Mitsubishi were connected to designing and manufacturing of
+% quantum cryptography systems. But along with them the small but
+% hi-tech companies began to appear in the market: MagiQ, Id Quantique,
+% Smart Quantum. All companies set forth above make systems with phase
+% coding of qubits.
+
+
+% OPEN SPACE?[MAU3]
+
+% Thus, less than for 50 years the quantum cryptography has passed a way
+% from idea to an embodiment in commercial system of quantum key
+% distribution. The basic consumers of systems of quantum cryptography
+% is the Ministries of Defense, the Ministries for Foreign Affairs and
+% large commercial companys. Currently high cost of quantum systems of
+% distribution of keys limits their mass application.
+
+
+%#####################################################################
+\section{Quantunm cryptography basics}
+
+
+% There is two main directions in quantum cryptography.
+
+% The first direction is based on coding of a quantum state of a single
+% particle and is based on an principle of impossibility to reliably
+% distinguish two non-orthogonal quantum states.
+
+% Any state of two-level quantum system can be represented as linear
+% combination(superposition) of its states:
+
+           
+% The numbers and are complex numbers and
+
+           
+% Laws of quantum mechanics tell us that two quantum states
+
+
+% And
+
+
+% cant be reliably distinguish If is not true, i.e. this states is
+% orthogonal.
+
+% Security of the first direction is based on the no-cloning theorem,
+% and it is one of the chief differences between quantum and classical
+% information .Thanks to unitarity and linearity of quantum mechanics,
+% it is impossible to create an exact copy of an unknown quantum state
+% without influence on an initial condition. Let, for example, sender
+% (Alice) and the receiver (Bob) use the two-level quantum systems for
+% an information transfer, by coding conditions of these systems. If the
+% eavsdropper (Eve) intercepts a data carrier, sended by Alice, measures
+% its condition and sends further to the Bob, that condition of this
+% carrier will be other, than before measurement. Thus, interception of
+% the quantum channel leads to errors of transfer which can be found out
+% by legal users.
+
+% The base protocol of one-particle quantum cryptography is BB84
+% protocol [].
+
+% The second direction is based on entanglement of quantum states. Two
+% quantum-mechanical systems (including space spatially) can be in a
+% correlation, so measuring of chosen characteristic of one system will
+% define result of measuring of same characteristic of another. Not a
+% one of the entangled systems is in determined condition. That?s why
+% entanglement state can?t be defined as direct multiplication of
+% systems states. State of two particles with ? spin is the example of
+% entangled state
+
+% .
+
+           
+% Measurement performed on one subsystem gives with equal probability
+% state or . The state of other subsystem will be opposite, i.e.  if the
+% result of measurement on the first system was vice- versa.
+
+% The base protocol for systems entanglement quantum cryptography is
+% EPR(Einstein-Podolsky-Rosen) protocol. Another name of this protocol
+% is E91[].
+
+% Base principles of these two directions have laid down in a basis of
+% working out of all protocols of quantum key distribution.
+
+
+
+%#####################################################################
+\section{BB84 Basics}
+
+% There is a set of protocols of quantum cryptography based on an
+% information transfer by single photon state coding, for example: BB84,
+% B92 [28], ??84 (4+2) [29], with six conditions [30], Goldenberga -
+% Vajdmana [31], Koashi-Imoto [32] and their modifications. We will look
+% closer at BB84 protocol because it is basic protocol for our QKD
+% setup.
+
+% In BB84 protocol 4 quantum states of photons, for example, a direction
+% of a vector of polarization are used. Depends on chosen bit Alice use
+% 90? or 135? for ?1?, 45? or 0? for ?0?. One pair of quantum conditions
+% corresponds to and and belongs to basis ?+?. Other pair of quantum
+% conditions corresponds to and and belongs to basis ? ?. In both basis
+% states are orthogonal, but states from different basis are in pairs
+% not orthogonal (nonorthogonality is necessary for detecting of
+% attempts eavsdropping).
+
+% Quantum states of system can be write down in next way
+
+           
+% Here and corresponds to ?0? and ?1? in ?+? basis, and and corresponds
+% to same values in ??? basis.
+
+% Bases are turned from each other on 45 ? (Figure 1).
+
+
+% Figure1
+
+
+
+% Stages of key distribution:
+
+
+
+% 1) Alice in a random way chooses one of bases. Then in basis chooses
+% randomly one of the states, corresponding 0 or 1 and sends photons
+% (figure 2)
+
+
+% Figure 2 - Photons with various polarization
+
+% 2) Bob randomly and irrespective of Alice chooses for each arriving
+% photon: rectilinear (+) or diagonal ( ) basis (Figure 3):
+
+
+% ??????? 3 - The chosen type of measurements
+
+% Then Bob saves results of measurements:
+
+% Drawing 4 - Results of measurements
+
+
+% 3) Bob on an public communication channel informs, what type of
+% measurements has been used for each photon that is what has been
+% chosen basis, but results of measurements remain in a secret;
+
+% 4) Alice informs Bob on the public communication channel, what
+% measurements have been chosen according to initial basis of Alice
+% (Figure 5):
+
+
+% Figure 5 - Cases of correct gaugings
+
+% 5) Further users leave only those cases in which the chosen bases have
+% coincided. These cases translate in bits (0 and 1), and thus receive a
+% key(Figure 6):
+
+
+% Figure 6 - Reception of key sequence by results of correct gaugings
+
+% The number of cases in which the chosen bases have coincided, will be
+% average half of length of initial sequence, i.e.  (example in Table
+% 1).
+
+
+
+% Table 1
+
+
+
+% Thus, as a result of transmission of a key in case of absence of noise
+% and distortions
+% 50 of photons will correctly registered by Bob on the average.
+
+% However ideal quantum channels does not exist and for formation of a
+% confidential key it is necessary to carry out additional procedures of
+% error correction and privacy amplification.
+
+%#####################################################################
+\section{BB84 With decoy states}
+
+%#####################################################################
+\section{QKD Experimental realization}
